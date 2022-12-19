@@ -1,4 +1,5 @@
-//UC3-Refactore the code Function and Calculate Employee Wage
+//UC4-Calculate Wage For Month
+const NUM_OF_WORKING_DAYS = 20;
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
 const PART_TIME_HOURS = 4;
@@ -16,7 +17,9 @@ function getworkingHours(empCheck) {
             return 0;
     }
 }
-let empCheck = Math.floor(Math.random() *10) % 3;
-empHrs = getworkingHours(empCheck);
+for (let day = 0; day < NUM_OF_WORKING_DAYS; day++) {
+    let empCheck = Math.floor(Math.random() * 10) % 3;
+    empHrs += getworkingHours(empCheck);
+}
 let empWage = empHrs * WAGE_PER_HOUR;
-console.log("Employee Wage is : " +empWage);
+console.log("Total Hours : " +empHrs+ "\tEmployee Wage: "+empWage);
